@@ -1,0 +1,17 @@
+﻿<Window x:Class="Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="CameraScreen" Source="{Binding Image}" MouseUp="CameraScreen_MouseUp"/>
+        <Label Content="{Binding FolderToSave, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="SavePathButton" Grid.Row="1"  Margin="5,5,5,5" MouseUp="SavePathButton_MouseUp"/>
+    </Grid>
+</Window>
