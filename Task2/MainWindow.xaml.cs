@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Windows.Input;
 
+
 namespace Task2
 {
     /// <summary>
@@ -16,7 +17,6 @@ namespace Task2
         {
             InitializeComponent();
             DataContext = VM;
-            
         }
 
         private void SavePathButton_MouseUp(object sender, MouseButtonEventArgs e)
@@ -32,7 +32,7 @@ namespace Task2
             }
         }
 
-        private void CameraScreen_MouseUp(object sender, MouseButtonEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             VM.SaveImage();
         }

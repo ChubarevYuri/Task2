@@ -5,13 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="CHUBAREV" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Image x:Name="CameraScreen" Source="{Binding Image}" MouseUp="CameraScreen_MouseUp"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="CameraScreen" Source="{Binding ImageSource}" Grid.ColumnSpan="6"/>
         <Label Content="{Binding FolderToSave, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="SavePathButton" Grid.Row="1"  Margin="5,5,5,5" MouseUp="SavePathButton_MouseUp"/>
+        <Label  Content="  Size:" Grid.Row="1" Grid.Column="1" Margin="0,5,0,5" />
+        <Label Content="{Binding Size}"  Grid.Row="1" Grid.Column="2" Margin="0,5,0,5" />
+        <Label Content="  FPS:" Grid.Row="1" Grid.Column="3" Margin="0,5,0,5" />
+        <Label Content="{Binding FPS}" Grid.Row="1" Grid.Column="4" Margin="0,5,0,5" />
+        <Button Content="Сохранить" Click="Button_Click" Grid.Row="1" Grid.Column="5" Margin="5,5,5,5"/>
     </Grid>
 </Window>
